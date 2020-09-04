@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/partials/page-landing.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="api.json"></script>
     
     <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
 
@@ -71,7 +70,7 @@ function searchRegion(regionName) {
       var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://api-covid19news.netlify.app/" + regionName,
+	"url": "https://covid-19-brasil.p.rapidapi.com/covid-19/20200402/" + regionName,
 	"method": "GET",
 	"headers": {
 		"x-rapidapi-host": "covid-19-brasil.p.rapidapi.com",
