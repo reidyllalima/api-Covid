@@ -25,7 +25,14 @@
         "acumulated_cases": 377,
         "acumulated_deaths": 5,
         "new_deaths": 0
-        }
+        },
+        {
+          "region": "Centro-oeste",
+          "new_cases": 20,
+          "acumulated_cases": 377,
+          "acumulated_deaths": 5,
+          "new_deaths": 0
+          }
   ]
 }
 }
