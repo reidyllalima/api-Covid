@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt_br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- adpatar este doc p/ tela < ou > -->
+    <title> News RL | Sua plataforma de notícias online </title>
+
+    <link rel="stylesheet" href="/styles/main.css">
+    <link rel="stylesheet" href="/styles/partials/page-landing.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;700&amp;family=Poppins:wght@400;600&amp;display=swap" rel="stylesheet">
+
+</head>
+<body id="page-landing">
+
+    
+
+    <div id="container">
+        <div class="logo-container">
+           <img src="/images/newsLogo.png" alt="News"> 
+           <h2>Sua plataforma de dados online sobre o COVID - 19 </h2>       
+    </div>
+
+
+
+
+        <div class="buttons-container">
+
+            <form class="form">
+                <input id="nameRegion" class="form-control" type="text" placeholder="Digite a região desejada..."> 
+            </form>
+           
+              <a class="news" onclick="searchRegion(document.getElementById('nameRegion').value)">
+                <img src="/images/icons/coronavirus.svg"   alt="Ver dados">
+                Ver dados 
+              </a>  
+        
+        </div>
+
+        <div class="resultado">
+           
+            <h3 id='region'></h3>
+          <!--   <p id='state'></p> -->
+            <p id='new_cases'></p>
+            <p id='acumulated_deaths'></p>
+            <p id="acumulated_cases"></p> 
+            <p id="new_deaths"></p> 
+
+
+          </div>
+
+    </div>
+    
+
+    <script>
+
+function searchRegion(regionName) {
+      $('#region').empty();
+    //  $('#state').empty();
+      $("#new_cases").empty();
+
+      $('#acumulated_deaths').empty();
+      $('#acumulated_cases').empty();
+      $('#new_deaths').empty();
+
+
+
+
+      var settings = {
+	"async": true,
+	"crossDomain": true,
+	"url": "https://covid-19-brasil.p.rapidapi.com/covid-19/20200402/" + regionName,
+	"method": "GET",
+	"headers": {
+		"x-rapidapi-host": "covid-19-brasil.p.rapidapi.com",
+		"x-rapidapi-key": "ff20da494cmsh4334d4d955a5bcap1e48c8jsnf14d9916ddcd"
+	}
+}
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+    $('#region').append("Região: ", response.data.accumulated.region);
+        $('#new_cases').append("Novos casos: " + response.data.accumulated.new_cases);
+        $('#acumulated_deaths').append("Mortes: " + response.data.accumulated.acumulated_deaths);
+    $('#acumulated_cases').append("Total de casos: ", response.data.accumulated.acumulated_cases);
+    $('#new_deaths').append("Novas mortes: ", response.data.accumulated.new_deaths);
+
+
+      });
+
+    }
+
+
+    </script>
+
+</body>
+</html>

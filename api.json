@@ -1,0 +1,31 @@
+
+{
+   "data":
+   {
+
+  "accumulated": [
+    {
+    "region": "Norte",
+    "new_cases": 40,
+    "acumulated_cases": 377,
+    "acumulated_deaths": 5,
+    "new_deaths": 0
+    },
+    {
+      "region": "Nordeste",
+      "new_cases": 80,
+      "acumulated_cases": 377,
+      "acumulated_deaths": 5,
+      "new_deaths": 0
+      },
+
+      {
+        "region": "Sul",
+        "new_cases": 20,
+        "acumulated_cases": 377,
+        "acumulated_deaths": 5,
+        "new_deaths": 0
+        }
+  ]
+}
+}
