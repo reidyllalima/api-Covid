@@ -38,10 +38,11 @@
         
         </div>
 
-        <div class="resultado">
+    <!-- 
+       <div class="resultado">
            
             <h3 id='region'></h3>
-          <!--   <p id='state'></p> -->
+         //  <p id='state'></p> 
             <p id='new_cases'></p>
             <p id='acumulated_deaths'></p>
             <p id="acumulated_cases"></p> 
@@ -49,6 +50,8 @@
 
 
           </div>
+    -->
+       
 
     </div>
     
@@ -70,12 +73,8 @@ function searchRegion(regionName) {
       var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://covid-19-brasil.p.rapidapi.com/covid-19/20200402/" + regionName,
+	"url": "https://api-covid19news.netlify.app/api.json",
 	"method": "GET",
-	"headers": {
-		"x-rapidapi-host": "covid-19-brasil.p.rapidapi.com",
-		"x-rapidapi-key": "ff20da494cmsh4334d4d955a5bcap1e48c8jsnf14d9916ddcd"
-	}
 }
 
 $.ajax(settings).done(function (response) {
