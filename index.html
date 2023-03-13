@@ -42,7 +42,7 @@
        <div class="resultado">
            
             <h3 id='region'></h3>
-            <p id='state'></p> 
+          //  <p id='state'></p> 
             <p id='new_cases'></p>
             <p id='acumulated_deaths'></p>
             <p id="acumulated_cases"></p> 
@@ -60,7 +60,7 @@
 
 function searchRegion(regionName) {
       $('#region').empty();
-      $('#state').empty();
+     // $('#state').empty();
       $("#new_cases").empty();
 
       $('#acumulated_deaths').empty();
@@ -77,10 +77,6 @@ function searchRegion(regionName) {
 		"X-RapidAPI-Host": "covid-19-brasil.p.rapidapi.com"
 	}
 };
-
-$.ajax(settings).done(function (response) {
-	console.log(response);
-});
 
 $.ajax(settings).done(function (response) {
 	console.log(response);
