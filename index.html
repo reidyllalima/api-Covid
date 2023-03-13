@@ -66,16 +66,21 @@ function searchRegion(regionName) {
       $('#acumulated_deaths').empty();
       $('#acumulated_cases').empty();
       $('#new_deaths').empty();
-
-
-
-
-      var settings = {
+		
+	var settings = {
 	"async": true,
 	"crossDomain": true,
-	"url": "https://api-covid19news.netlify.app/api.json",
+	"url": "https://covid-19-brasil.p.rapidapi.com/covid-19/20200402" + regionName,
 	"method": "GET",
-}
+	"headers": {
+		"X-RapidAPI-Key": "ff20da494cmsh4334d4d955a5bcap1e48cBjsnf14d9916ddcd",
+		"X-RapidAPI-Host": "covid-19-brasil.p.rapidapi.com"
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+});
 
 $.ajax(settings).done(function (response) {
 	console.log(response);
